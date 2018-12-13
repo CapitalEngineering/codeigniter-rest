@@ -146,26 +146,26 @@ class Resource extends yidas\rest\Controller {}
 Then you could access RESTful API:
 
 ```
-https://yourname.com/resources/api
-https://yourname.com/resources/api/123
+https://yourname.com/resource/api
+https://yourname.com/resource/api/123
 ```
 
 You could also use `/ajax` instead of `/api` if you like:
 
 ```
-https://yourname.com/resources/ajax
-https://yourname.com/resources/ajax/123
+https://yourname.com/resource/ajax
+https://yourname.com/resource/ajax/123
 ```
 
-> `resources` is Controller name, if you don't want to have `/api` or `/ajax` in URI you could set Routes Setting as below.
+> `resource` is Controller name, if you don't want to have `/api` or `/ajax` in URI you could set Routes Setting as below.
 
 ### Routes Setting
 
 If you want to have the standard RESTful URI pattern, which defines controller as resource for URI, for example:
 
 ```
-https://yourname.com/resources
-https://yourname.com/resources/123
+https://yourname.com/resource
+https://yourname.com/resource/123
 ```
 
 You could add a pair of routes for this controller into `\application\config\routes.php` to enable RESTful API url:

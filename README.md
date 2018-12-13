@@ -138,7 +138,7 @@ CONFIGURATION
 1. Create a controller to extend `yidas\rest\Controller`, 
 
 ```php
-class ResourceController extends yidas\rest\Controller {}
+class Resource extends yidas\rest\Controller {}
 ```
 
 2. Add and implement action methods referring by [Build Methods](#build-methods).

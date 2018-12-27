@@ -209,9 +209,9 @@ protected function update($resourceID=null, $requestData=null) {}
 protected function delete($resourceID=null, $requestData=null) {}
 ```
 
-> `$requestData` (array) is the array input data parsed from request raw body
-> 
 > `$resourceID` (string) is the addressed identity of the resource from request
+>
+> `$requestData` (array) is the array input data parsed from request raw body, which supports `x-www-form-urlencoded` request content type. (Alternatively, use `[this->request->getRawBody()](#getrawbody)` to get raw data)
 
 ### Custom Routes & Methods
 
@@ -319,7 +319,7 @@ JSON Result:
 HTTP REQUEST
 ------------
 
-The PSR-7 request component `yidas\http\request` is loaded with `yidas\rest\Controller`, which provides input handler and HTTP Authentication.
+The PSR-7 request component `yidas\http\request` is preloaded into `yidas\rest\Controller`, which provides input handler and HTTP Authentication. You could call it by `$this->request` in controller class.
 
 ### Usage
 
@@ -329,6 +329,12 @@ Returns the raw HTTP request body
 
 ```php
 public string getRawBody()
+```
+
+*Example:*
+```php
+// Request with `application/json` raw
+$arrayData = json_decode($this->request->getRawBody);
 ```
 
 #### getAuthCredentialsWithBasic()
@@ -362,7 +368,7 @@ $b64token = $this->request->getAuthCredentialsWithBearer();
 HTTP RESPONSE
 -------------
 
-The PSR-7 response component `yidas\http\response` is loaded with `yidas\rest\Controller`, which provides output handler and formatter.
+The PSR-7 response component `yidas\http\response` is preloaded into `yidas\rest\Controller`, which provides output handler and formatter. You could call it by `$this->response` in controller class.
 
 ### Usage
 

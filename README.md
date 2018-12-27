@@ -334,7 +334,7 @@ public string getRawBody()
 *Example:*
 ```php
 // Request with `application/json` raw
-$arrayData = json_decode($this->request->getRawBody);
+$data = json_decode($this->request->getRawBody);
 ```
 
 #### getAuthCredentialsWithBasic()
